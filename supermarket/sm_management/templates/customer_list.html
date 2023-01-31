@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+    .table{
+      width:1000px;
+      font-family: 'Times New Roman', Times, serif;
+      border-collapse: collapse;
+      
+    }
+    td, th{
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+
+    }
+    tr:nth-child(even){
+      background: white;
+    }
+    .d2{
+    background: rgb(31, 31, 141);
+    height: 50px;
+   }
+    </style>
+  </head>
+
+<body>
+  {% block pageContent %}
+    <div class="d2"><center><h1>CUSTOMER LIST</h1></center></div>
+<div class="">
+  <table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>customer id</th>
+            <th>customer name</th>
+            <th>customer address</th>
+            <th>customer phone</th>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for cust in customers %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{cust.cust_id}}</td>
+            <td>{{cust.cust_name}}</td>
+            <td>{{cust.cust_address}}</td>
+            <td>{{cust.cust_phone }}</td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock pageContent %}
+
+</div>
+    
+</body>
+
+</html>

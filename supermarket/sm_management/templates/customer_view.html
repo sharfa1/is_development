@@ -1,0 +1,34 @@
+{% block pageContent %} {% load  crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<title>Supermarket management </title>
+<style type="text/css">
+.d2{
+    background: rgb(31, 31, 141);
+    height: 50px;
+}
+.d3{
+    background: rgb(207, 41, 110);
+    height: 50px;
+}
+</style>
+<body>
+    <div class="d1">
+        <center><h1 >WELCOME TO THE HARDWARE SYSTEM</h1></center>
+    </div>
+    <div class="d2">
+        <h2>PLEASE INFOMATION CUSTOMER BELOW</h2>
+
+    </div>
+    <div class="d3">
+        <p >CUSTOMER INFORMATION</p>
+    </div>
+   
+   <form method="POST">
+       {% csrf_token %} {{ customer_form|crispy}}
+       <button type="submit">submit</button>
+   </form>
+   
+</body>
+{% endblock pageContent %}
+</html>
